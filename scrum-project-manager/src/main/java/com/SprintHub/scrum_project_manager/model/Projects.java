@@ -24,7 +24,7 @@ public class Projects {
 
     @Column(name = "name_project")
     @NotBlank(message = "{project_notBlank.nameProject}")
-    @Size(max = 255, message = "{}")
+    @Size(max = 500, message = "{project_size.nameProject}")
     private String nameProject;
 
     @Column(name = "description_project")

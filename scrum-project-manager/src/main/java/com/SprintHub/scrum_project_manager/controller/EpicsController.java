@@ -34,4 +34,9 @@ public class EpicsController {
     public ResponseEntity<Epics> updateEpicByTokenEpic(@RequestBody Epics epics, @PathVariable String tokenEpic){
         return new ResponseEntity<>(epicsService.updateEpicByTokenEpic(epics, tokenEpic), HttpStatus.OK);
     }
+
+    @DeleteMapping("epic/{tokenEpic}")
+    public ResponseEntity<String> deleteEpic(@PathVariable String tokenEpic) {
+        return new ResponseEntity(epicsService.deleteEpic(tokenEpic), HttpStatus.NO_CONTENT);
+    }
 }

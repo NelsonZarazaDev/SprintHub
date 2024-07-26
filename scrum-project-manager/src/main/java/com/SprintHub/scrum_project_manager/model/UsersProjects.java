@@ -1,6 +1,7 @@
 package com.SprintHub.scrum_project_manager.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,15 +23,12 @@ public class UsersProjects {
     private int idUserProject;
 
     @Column(name = "user_id")
-    @NotNull(message = "{}")
     private int userId;
 
     @Column(name = "project_id")
-    @NotNull(message = "{}")
     private int projectId;
 
     @Column(name = "role_id")
-    @NotNull(message = "{}")
     private int roleId;
 
     @Column(name = "token_users_projects")

@@ -33,4 +33,9 @@ public class ModulesController {
     public ResponseEntity<Modules> updateModule(@RequestBody Modules modules, @PathVariable String tokenModule) {
         return new ResponseEntity<>(modulesService.updateModule(modules, tokenModule), HttpStatus.OK);
     }
+
+    @DeleteMapping("module/{tokenModule}")
+    public ResponseEntity<String> deleteUserStories(@PathVariable String tokenModule) {
+        return new ResponseEntity(modulesService.deleteModule(tokenModule), HttpStatus.NO_CONTENT);
+    }
 }
