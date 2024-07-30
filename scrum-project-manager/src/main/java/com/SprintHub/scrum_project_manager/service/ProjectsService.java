@@ -53,9 +53,9 @@ public class ProjectsService {
     public boolean deleteProjectsByToken(String tokenProject) {
         Optional<Projects> projects = projectsRepository.getProjectByToken(tokenProject);
         if(projects.isEmpty()){
-            return false;
+            throw new NotFoundException(Constants.PROJECT_NOT_FOUND.getMessage());
         }
-        projectsRepository.deleteProjectsByToken(tokenProject);
+        projectsRepository.delete(projects.get());
         return true;
     }
 
